@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import 'bootstrap/dist/css/bootstrap.css'
+import 'fullcalendar/dist/fullcalendar.css'
 
 Vue.use(Router)
 
