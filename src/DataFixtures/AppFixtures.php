@@ -2,6 +2,9 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
+use App\Entity\Agenda;
+use App\Entity\TodoList;
 use App\Entity\Cathegorie;
 use App\Entity\Inventaire;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -76,6 +79,39 @@ class AppFixtures extends Fixture
     $inventaire->setQuantite(100 );
     $inventaire->setMoyenne(50 );
     $manager->persist($inventaire);
+
+    $agenda=new Agenda();
+    $agenda->setDate(new \DateTime('2018-12-9'));
+    $agenda->setAction("vivre");
+    $agenda->setDescription("voila");
+    $agenda->setDateFin(new \DateTime('2018-12-13'));
+    $manager->persist($agenda);
+    $agenda2=new Agenda();
+    $agenda2->setDate(new \DateTime('2018-12-15  03:00:00'));
+    $agenda2->setAction("rdv avec maman");
+    $agenda2->setDescription("si si je t'assure que c'est vrai");
+    $agenda2->setDateFin(new \DateTime('2018-12-15  05:00:00'));
+    $manager->persist($agenda2);
+
+
+
+    $todo=new TodoList();
+    $todo->setNom("Faire à manger");
+    $todo->setDescription("Bah t'est con ou quoi");
+    $todo->setDate(new \DateTime());
+    $todo->setImportance(0);
+    $todo->setAgenda($agenda);
+    $manager->persist($todo);
+    $todo2=new TodoList();
+    $todo2->setNom("Faire la vaisselle");
+    $todo2->setDate(new \DateTime());
+    $todo2->setImportance(0);
+    $manager->persist($todo2);
+    $todo3=new TodoList();
+    $todo3->setNom("manger");
+    $todo3->setDate(new \DateTime());
+    $todo3->setImportance(0);
+    $manager->persist($todo3);
 
     $manager->flush();
     }
