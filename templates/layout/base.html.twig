@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Symfony! - {% block title %}{% endblock %}</title>
+    {% block stylesheet %}
+        <link rel="stylesheet" href="{{ asset('build/global.css') }}">
+		<link rel="stylesheet" href="{{ asset('dropify.css') }}">
+    {% endblock %}
+</head>
+<body>
+{% block body %}{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+	<script src="{{ asset('build/bundle.js') }}"></script>
+    <script src="{{ asset('dropify.js') }}"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+    
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="{{ asset('bundles/pugxautocompleter/js/autocompleter-jqueryui.js') }}"></script>
+
+<script>
+  $('.js-datepicker').datepicker({
+            format:'mm/yyyy',
+            language:"en-GB"
+        });
+</script>
+    <script>
+        function formAdapt()
+        {   
+            switch (document.getElementById('bib_content_entry_type').selectedIndex) {
+                case 0:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'block';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'none';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'none';
+                    document.getElementById('chapter').style.display = 'none';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'block';
+                    document.getElementById('edition').style.display = 'none';
+                    document.getElementById('editor').style.display = 'none';
+                    document.getElementById('howpublished').style.display = 'none';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'block';
+                    document.getElementById('organization').style.display = 'none';
+                    document.getElementById('pages').style.display = 'block';
+                    document.getElementById('publisher').style.display = 'none';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'none';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'block';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                case 1:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'none';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'block';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'none';
+                    document.getElementById('chapter').style.display = 'none';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'none';
+                    document.getElementById('edition').style.display = 'block';
+                    document.getElementById('editor').style.display = 'block';
+                    document.getElementById('howpublished').style.display = 'none';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'none';
+                    document.getElementById('organization').style.display = 'none';
+                    document.getElementById('pages').style.display = 'none';
+                    document.getElementById('publisher').style.display = 'block';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'block';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'block';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                case 2:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'none';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'block';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'none';
+                    document.getElementById('chapter').style.display = 'none';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'none';
+                    document.getElementById('edition').style.display = 'none';
+                    document.getElementById('editor').style.display = 'none';
+                    document.getElementById('howpublished').style.display = 'block';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'none';
+                    document.getElementById('organization').style.display = 'none';
+                    document.getElementById('pages').style.display = 'none';
+                    document.getElementById('publisher').style.display = 'none';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'none';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'none';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                case 3:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'none';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'block';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'block';
+                    document.getElementById('chapter').style.display = 'none';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'none';
+                    document.getElementById('edition').style.display = 'none';
+                    document.getElementById('editor').style.display = 'block';
+                    document.getElementById('howpublished').style.display = 'none';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'none';
+                    document.getElementById('organization').style.display = 'block';
+                    document.getElementById('pages').style.display = 'block';
+                    document.getElementById('publisher').style.display = 'block';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'none';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'none';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                case 4:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'none';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'block';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'none';
+                    document.getElementById('chapter').style.display = 'block';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'none';
+                    document.getElementById('edition').style.display = 'block';
+                    document.getElementById('editor').style.display = 'block';
+                    document.getElementById('howpublished').style.display = 'none';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'none';
+                    document.getElementById('organization').style.display = 'none';
+                    document.getElementById('pages').style.display = 'block';
+                    document.getElementById('publisher').style.display = 'block';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'block';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'block';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                case 5:
+                    document.getElementById('bibtexkey').style.display = 'block';
+                    document.getElementById('title').style.display = 'block';
+                    document.getElementById('author').style.display = 'block';
+                    document.getElementById('journal').style.display = 'none';
+                    document.getElementById('year').style.display = 'block';
+                    document.getElementById('address').style.display = 'block';
+                    document.getElementById('annote').style.display = 'none';
+                    document.getElementById('booktitle').style.display = 'block';
+                    document.getElementById('chapter').style.display = 'none';
+                    document.getElementById('crossref').style.display = 'none';
+                    document.getElementById('doi').style.display = 'none';
+                    document.getElementById('edition').style.display = 'none';
+                    document.getElementById('editor').style.display = 'block';
+                    document.getElementById('howpublished').style.display = 'none';
+                    document.getElementById('institution').style.display = 'none';
+                    document.getElementById('month').style.display = 'block';
+                    document.getElementById('number').style.display = 'none';
+                    document.getElementById('organization').style.display = 'block';
+                    document.getElementById('pages').style.display = 'block';
+                    document.getElementById('publisher').style.display = 'block';
+                    document.getElementById('school').style.display = 'none';
+                    document.getElementById('series').style.display = 'none';
+                    document.getElementById('type').style.display = 'none';
+                    document.getElementById('volume').style.display = 'none';
+                    document.getElementById('note').style.display = 'block';
+                    document.getElementById('abstract').style.display = 'block';
+                    break;
+                default:
+            }
+
+        }
+    </script>
+
+    <script>
+        // Dropify (to upload file)
+        $(document).ready(function(){
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez',
+                    replace: 'Glissez-déposez un fichier ou cliquez pour remplacer',
+                    remove:  'Supprimer',
+                    error: ''
+                },
+                error: {
+                        'fileSize': 'Le fichier est trop volumineux : maximum 1Mo.',
+                        'fileExtension': 'Ce type de fichier n\'est pas autorisé. Veuillez réessayer avec un fichier .bib.'
+                }
+            });
+            var drEvent = $('.dropify-fr').dropify();
+            drEvent.on('dropify.beforeClear', function(event, element){
+                return confirm("Voulez-vous vraiment supprimer \"" + element.file.name + "\" ?");
+            });
+        });
+    </script>
+   
+{% endblock %}
+</body>
+</html>
